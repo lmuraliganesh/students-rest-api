@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Country Info Finder</title>
+        <link rel="stylesheet" 
+              href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>🌍 Country Info Finder</h1>
+            <p>Enter a country name to get information!</p>
+            <form action="/country" method="POST">
+                <input type="text" 
+                       name="country" 
+                       placeholder="Enter country name">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </body>
+</html>

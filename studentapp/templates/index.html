@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <link rel="stylesheet" 
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student Management</h1>
+        <a href="/add" class="btn">➕ Add New Student</a>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.city }}</td>
+                <td>
+                    <a href="/delete/{{ student.id }}" 
+                       class="btn-delete">🗑️ Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% if students|length == 0 %}
+            <p>No students found! Add some!</p>
+        {% endif %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ info.name }}</title>
+        <link rel="stylesheet" 
+              href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{ info.flag }} {{ info.name }}</h1>
+            
+            <div class="info-box">
+                <p>🏛️ Capital    : {{ info.capital }}</p>
+                <p>👥 Population : {{ info.population }}</p>
+                <p>🌍 Region     : {{ info.region }}</p>
+                <p>💰 Currency   : {{ info.currency }}</p>
+                <p>🗣️ Language   : {{ info.language }}</p>
+            </div>
+
+            <a href="/">🔍 Search Again</a>
+        </div>
+    </body>
+</html>

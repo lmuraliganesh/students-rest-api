@@ -1,0 +1,75 @@
+/* style.css */
+
+/* whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* main container */
+.container {
+    background-color: white;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* heading */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* paragraph */
+p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* input box */
+input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+}
+
+/* button */
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* country info box */
+.info-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    margin: 10px 0;
+    border-radius: 5px;
+}
