@@ -30,6 +30,7 @@ def home():
             "POST"  : "/api/students",
             "PUT"   : "/api/students/<id>",
             "DELETE": "/api/students/<id>"
+           
         }
     })
 @app.route("/api/students", methods = ["GET"])
@@ -58,6 +59,24 @@ def get_student(id):
     return jsonify({
         ""
     })
+@app.route("/api/students/search/<string:name>", methods = ["GET"])
+def search_students(name):
+    conn = get_db()
+    students = conn.execute("SELECT * FROM students WHERE name LIKE ?",
+        (f"%{name}%",) ).fetchall()
+    conn.close
+
+    if students:
+        return jsonify({
+            "status" : "Success",
+            "count"  : len(students),
+            "studnets": [dict(s) for s in students]
+            
+        }), 200
+    return jsonify({
+        "status" : "error",
+        "message" : f"No students name found with name{name}"
+    }), 404
 
 @app.route("/api/students", methods = ["POST"])
 def add_students():
